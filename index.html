@@ -1,0 +1,393 @@
+<!doctype html>
+<html lang="el">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Ο γάμος μας</title>
+  <meta name="description" content="Πληροφορίες και επιβεβαίωση παρουσίας για τον γάμο μας.">
+  <!-- Προεπισκόπηση συνδέσμου σε WhatsApp/Viber/Messenger. Βάλτε πραγματική φωτογραφία όταν ανέβει online. -->
+  <meta property="og:title" content="Ο γάμος μας">
+  <meta property="og:description" content="Πληροφορίες και επιβεβαίωση παρουσίας">
+  <meta property="og:type" content="website">
+  <!-- <meta property="og:image" content="https://your-domain/cover.jpg"> -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Display:ital,wght@0,300;0,400;1,300&family=Commissioner:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#faf7f2;
+      --surface:#ffffff;
+      --ink:#2b2a27;
+      --muted:#6f6a61;
+      --olive:#5c6b4a;
+      --olive-soft:#e7eadf;
+      --terracotta:#b8643c;
+      --line:#e6e0d6;
+      --serif:"Noto Serif Display", Georgia, serif;
+      --sans:"Commissioner", system-ui, sans-serif;
+      --radius:14px;
+      --max:1040px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-weight:300;line-height:1.65;font-size:17px;-webkit-font-smoothing:antialiased}
+    img{max-width:100%;display:block}
+    a{color:inherit}
+    .wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+
+    /* Μενού */
+    header.nav{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;height:60px;gap:16px}
+    .monogram{font-family:var(--serif);font-size:1.25rem;text-decoration:none;letter-spacing:.02em;white-space:nowrap}
+    .nav-links{display:flex;gap:22px;list-style:none;margin:0;padding:0}
+    .nav-links a{text-decoration:none;font-size:.88rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+    .nav-links a:hover{color:var(--ink)}
+    @media (max-width:760px){.nav-links{display:none}}
+
+    /* Hero */
+    .hero{text-align:center;padding:96px 0 80px;position:relative;overflow:hidden}
+    .branch{width:120px;margin:0 auto 28px;color:var(--olive)}
+    .kicker{font-size:1.65rem;letter-spacing:.28em;text-transform:uppercase;color:var(--terracotta);margin:0 0 18px;font-weight:500}
+    .names{font-family:var(--serif);font-weight:300;font-size:clamp(2.6rem,8vw,5.2rem);line-height:1.08;margin:0 0 22px}
+    .when{font-size:1.1rem;color:var(--muted);margin:0}
+    .when strong{color:var(--ink);font-weight:500}
+    .countdown{display:flex;justify-content:center;gap:clamp(14px,4vw,36px);margin:44px 0 40px}
+    .countdown div{min-width:64px}
+    .countdown span{display:block;font-family:var(--serif);font-size:clamp(2rem,6vw,2.8rem);line-height:1}
+    .countdown small{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+    .btn{display:inline-block;background:var(--olive);color:#fff;border:0;border-radius:999px;padding:14px 30px;font:500 .9rem var(--sans);letter-spacing:.1em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:background .2s}
+    .btn:hover{background:#4a573b}
+    .btn:disabled{opacity:.6;cursor:default}
+
+    /* Ενότητες */
+    section{padding:84px 0;border-top:1px solid var(--line)}
+    .section-title{font-family:var(--serif);font-weight:300;font-size:clamp(2rem,5vw,2.8rem);text-align:center;margin:0 0 12px}
+    .section-sub{text-align:center;color:var(--muted);max-width:560px;margin:0 auto 48px}
+    .welcome p{max-width:640px;margin:0 auto;text-align:center;font-size:1.15rem}
+
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
+    .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:32px}
+    .card .label{font-size:.75rem;letter-spacing:.22em;text-transform:uppercase;color:var(--terracotta);font-weight:500}
+    .card h3{font-family:var(--serif);font-weight:400;font-size:1.6rem;margin:8px 0 6px;line-height:1.25}
+    .card .time{font-size:1.05rem;font-weight:500;margin:0 0 4px}
+    .card .addr{color:var(--muted);margin:0 0 20px}
+    .link{font-weight:500;font-size:.92rem;color:var(--olive);text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:1px}
+
+    /* Πρόγραμμα */
+    .timeline{list-style:none;margin:0 auto;padding:0;max-width:560px}
+    .timeline li{display:grid;grid-template-columns:80px 1fr;gap:20px;padding:18px 0;border-bottom:1px dashed var(--line)}
+    .timeline li:last-child{border-bottom:0}
+    .timeline time{font-family:var(--serif);font-size:1.4rem;color:var(--olive)}
+    .timeline strong{display:block;font-weight:500}
+    .timeline span{color:var(--muted);font-size:.95rem}
+
+    /* RSVP */
+    .rsvp{background:var(--olive-soft)}
+    form{max-width:560px;margin:0 auto;background:var(--surface);border-radius:var(--radius);padding:36px;border:1px solid var(--line)}
+    .field{margin-bottom:22px}
+    label,.legend{display:block;font-weight:500;font-size:.9rem;margin-bottom:8px}
+    input[type=text],textarea,select{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;font:300 1rem var(--sans);background:var(--bg);color:var(--ink)}
+    input:focus,textarea:focus,select:focus{outline:2px solid var(--olive);outline-offset:1px;border-color:transparent}
+    textarea{min-height:90px;resize:vertical}
+    .choices{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .choices label{display:flex;align-items:center;gap:10px;border:1px solid var(--line);border-radius:10px;padding:12px 14px;margin:0;cursor:pointer;font-weight:400}
+    .choices input{accent-color:var(--olive)}
+    .choices label:has(input:checked){border-color:var(--olive);background:var(--olive-soft)}
+    .hp{position:absolute;left:-9999px}
+    .form-msg{text-align:center;margin-top:18px;font-weight:500}
+    .form-msg.ok{color:var(--olive)}
+    .form-msg.err{color:var(--terracotta)}
+    .attending-only[hidden]{display:none}
+    @media (max-width:480px){form{padding:24px}.choices{grid-template-columns:1fr}}
+
+    /* Ερωτήσεις */
+    .faq{max-width:680px;margin:0 auto}
+    details{border-bottom:1px solid var(--line);padding:18px 0}
+    summary{cursor:pointer;font-weight:500;font-size:1.05rem;list-style:none;display:flex;justify-content:space-between;gap:16px}
+    summary::-webkit-details-marker{display:none}
+    summary::after{content:"+";font-family:var(--serif);font-size:1.4rem;line-height:1;color:var(--olive)}
+    details[open] summary::after{content:"–"}
+    details p{margin:12px 0 0;color:var(--muted)}
+
+    footer{text-align:center;padding:56px 0 64px;border-top:1px solid var(--line);color:var(--muted)}
+    footer .names-sm{font-family:var(--serif);font-size:1.6rem;color:var(--ink);margin:0 0 6px}
+  </style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a href="#top" class="monogram" data-cfg="initials"></a>
+    <ul class="nav-links">
+      <li><a href="#details">Λεπτομέρειες</a></li>
+      <li><a href="#schedule">Πρόγραμμα</a></li>
+      <li><a href="#travel">Διαμονή</a></li>
+      <li><a href="#rsvp">RSVP</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="top">
+  <!-- HERO -->
+  <div class="hero wrap">
+    <svg class="branch" viewBox="0 0 120 40" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true">
+      <path d="M4 22 C 40 18, 80 18, 116 22"/>
+      <ellipse cx="22" cy="15" rx="7" ry="2.6" transform="rotate(-25 22 15)"/>
+      <ellipse cx="34" cy="27" rx="7" ry="2.6" transform="rotate(25 34 27)"/>
+      <ellipse cx="48" cy="13" rx="7" ry="2.6" transform="rotate(-25 48 13)"/>
+      <ellipse cx="60" cy="27" rx="7" ry="2.6" transform="rotate(25 60 27)"/>
+      <ellipse cx="74" cy="13" rx="7" ry="2.6" transform="rotate(-25 74 13)"/>
+      <ellipse cx="86" cy="27" rx="7" ry="2.6" transform="rotate(25 86 27)"/>
+      <ellipse cx="99" cy="15" rx="7" ry="2.6" transform="rotate(-25 99 15)"/>
+      <circle cx="66" cy="20" r="2.4" fill="currentColor" stroke="none"/>
+    </svg>
+    <p class="kicker">Παντρευόμαστε</p>
+    <h1 class="names" data-cfg="names"></h1>
+    <p class="when"><strong data-cfg="dateLong"></strong> · <span data-cfg="city"></span></p>
+
+    <div class="countdown" aria-live="polite">
+      <div><span id="cd-d">0</span><small>Ημέρες</small></div>
+      <div><span id="cd-h">0</span><small>Ώρες</small></div>
+      <div><span id="cd-m">0</span><small>Λεπτά</small></div>
+      <div><span id="cd-s">0</span><small>Δευτ.</small></div>
+    </div>
+    <a href="#rsvp" class="btn">Επιβεβαιώστε την παρουσία σας</a>
+  </div>
+
+  <!-- ΚΑΛΩΣΟΡΙΣΜΑ -->
+  <section class="welcome">
+    <div class="wrap">
+      <h2 class="section-title">Καλώς ήρθατε</h2>
+      <p>Θα χαρούμε πολύ να μοιραστούμε μαζί σας την πιο όμορφη μέρα της ζωής μας. Εδώ θα βρείτε όλες τις πληροφορίες που χρειάζεστε.</p>
+    </div>
+  </section>
+
+  <!-- ΛΕΠΤΟΜΕΡΕΙΕΣ -->
+  <section id="details">
+    <div class="wrap">
+      <h2 class="section-title">Η μεγάλη μέρα</h2>
+      <p class="section-sub">Πού και πότε θα γιορτάσουμε.</p>
+      <div class="cards">
+        <div class="card">
+          <div class="label">Τελετή</div>
+          <h3 data-cfg="ceremony.name"></h3>
+          <p class="time" data-cfg="ceremony.time"></p>
+          <p class="addr" data-cfg="ceremony.address"></p>
+          <a class="link" data-cfg-href="ceremony.map" target="_blank" rel="noopener">Οδηγίες στον χάρτη</a>
+        </div>
+        <div class="card">
+          <div class="label">Δεξίωση</div>
+          <h3 data-cfg="reception.name"></h3>
+          <p class="time" data-cfg="reception.time"></p>
+          <p class="addr" data-cfg="reception.address"></p>
+          <a class="link" data-cfg-href="reception.map" target="_blank" rel="noopener">Οδηγίες στον χάρτη</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ΠΡΟΓΡΑΜΜΑ -->
+  <section id="schedule">
+    <div class="wrap">
+      <h2 class="section-title">Πρόγραμμα</h2>
+      <p class="section-sub">Μια ιδέα για το πώς θα κυλήσει η βραδιά.</p>
+      <ol class="timeline" id="timeline"></ol>
+    </div>
+  </section>
+
+  <!-- ΔΙΑΜΟΝΗ -->
+  <section id="travel">
+    <div class="wrap">
+      <h2 class="section-title">Διαμονή & μετακίνηση</h2>
+      <p class="section-sub">Για όσους έρχονται από μακριά.</p>
+      <div class="cards">
+        <div class="card">
+          <div class="label">Διαμονή</div>
+          <h3>Acropol Hotel</h3>
+          <p class="addr">Έχουμε εξασφαλίσει ειδική τιμή στο Acropol Hotel. Αναφέρετε τον γάμο μας κατά την κράτηση.</p>
+        </div>
+        <div class="card">
+          <div class="label">Μετακίνηση</div>
+          <h3>Πώς θα έρθετε</h3>
+          <p class="addr">Ο Ιερός Ναός απέχει περίπου 15 λεπτά από τον χώρο της δεξίωσης (20χλμ). 10 λεπτά από την πόλη των Σερρών και 1 ώρα από την Θεσσαλονίκη.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RSVP -->
+  <section id="rsvp" class="rsvp">
+    <div class="wrap">
+      <h2 class="section-title">RSVP</h2>
+      <p class="section-sub">Παρακαλούμε ενημερώστε μας έως <strong data-cfg="deadlineLong"></strong>.</p>
+
+      <form id="rsvp-form" novalidate>
+        <div class="field">
+          <label for="f-name">Ονοματεπώνυμο</label>
+          <input id="f-name" name="name" type="text" autocomplete="name" required>
+        </div>
+        <div class="field">
+          <label for="f-contact">Email ή τηλέφωνο</label>
+          <input id="f-contact" name="contact" type="text" autocomplete="email">
+        </div>
+        <div class="field">
+          <span class="legend">Θα έρθετε;</span>
+          <div class="choices">
+            <label><input type="radio" name="attending" value="yes" required> <span>Ναι, με χαρά!</span></label>
+            <label><input type="radio" name="attending" value="no"> <span>Δυστυχώς όχι</span></label>
+          </div>
+        </div>
+        <div class="attending-only" hidden>
+          <div class="field">
+            <label for="f-guests">Αριθμός ατόμων (μαζί με εσάς)</label>
+            <select id="f-guests" name="guests">
+              <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label for="f-msg">Μήνυμα προς το ζευγάρι (προαιρετικό)</label>
+          <textarea id="f-msg" name="message"></textarea>
+        </div>
+        <!-- Honeypot: τα bots το συμπληρώνουν, οι άνθρωποι δεν το βλέπουν -->
+        <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <div style="text-align:center">
+          <button class="btn" type="submit">Αποστολή</button>
+        </div>
+        <p class="form-msg" id="form-msg" role="status"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ΕΡΩΤΗΣΕΙΣ -->
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="names-sm" data-cfg="names"></p>
+    <p>Με αγάπη, σας περιμένουμε.</p>
+  </div>
+</footer>
+
+<script>
+  /* =========================================================
+     ΡΥΘΜΙΣΕΙΣ — βάλτε εδώ τα δικά σας στοιχεία
+     ========================================================= */
+  const CONFIG = {
+    names:    "Θανάσης & Χρυσούλα",
+    initials: "Θ & Χ",
+    date:     "2027-06-12T17:00:00+03:00",   // ώρα έναρξης τελετής (θερινή ώρα Ελλάδας)
+    city:     "Σιδηρόκαστρο Σερρών",
+    ceremony: {
+      name:    "Ιερός Ναός Αγίας Παρασκευής",
+      time:    "17:00",
+      address: "Βασ. Γεωργίου Β 65, Σιδηρόκαστρο Σερρών",
+      map:     "https://maps.app.goo.gl/5Behfhw8t2qyujLbA"
+    },
+    reception: {
+      name:    "Acropol Hotel",
+      time:    "18:30",
+      address: "5ο χλμ Εθνικής Οδού Θεσσαλονίκης/Σερρών +302321078880",
+      map:     "https://maps.app.goo.gl/LVe2agiQaYsrX4ZC9"
+    },
+    schedule: [
+      { time: "17:00", title: "Τελετή",       note: "Στον ναό" },
+      { time: "18:30", title: "Καλωσόρισμα",  note: "Ποτό & μεζέδες" },
+      { time: "19:00", title: "Δείπνο",       note: "Στον χώρο της δεξίωσης" },
+      { time: "20:00", title: "Πάρτι",        note: "Μέχρι το πρωί" }
+    ],
+    rsvpDeadline: "2027-05-15",
+    // Το URL του Google Apps Script (τελειώνει σε /exec). Κενό = δοκιμαστική λειτουργία.
+    rsvpEndpoint: "https://script.google.com/macros/s/AKfycbxAb-8t0TXolUoK_gKY4PnYyfKKkBk0xn57dC7JDOO4w0ciT8YMZL8r9n50R9b16IRSsA/exec"
+  };
+
+  /* =========================================================
+     ΚΩΔΙΚΑΣ — δεν χρειάζεται αλλαγή από εδώ και κάτω
+     ========================================================= */
+  const MSG = {
+    sending:  "Αποστολή…",
+    okYes:    "Ευχαριστούμε! Ανυπομονούμε να σας δούμε.",
+    okNo:     "Ευχαριστούμε που μας ενημερώσατε. Θα μας λείψετε!",
+    error:    "Κάτι πήγε στραβά. Δοκιμάστε ξανά ή επικοινωνήστε μαζί μας.",
+    required: "Συμπληρώστε το όνομά σας και αν θα έρθετε.",
+    demo:     " (Δοκιμαστική λειτουργία: τίποτα δεν στάλθηκε ακόμη.)"
+  };
+
+  const get = (obj, path) => path.split(".").reduce((o, k) => (o ? o[k] : undefined), obj);
+  const fmtDate = (iso, opts) => new Date(iso).toLocaleDateString("el-GR", opts);
+  const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;" }[c]));
+
+  function render() {
+    const derived = {
+      dateLong:     fmtDate(CONFIG.date, { weekday:"long", day:"numeric", month:"long", year:"numeric" }),
+      deadlineLong: fmtDate(CONFIG.rsvpDeadline, { day:"numeric", month:"long", year:"numeric" })
+    };
+    document.querySelectorAll("[data-cfg]").forEach(el => {
+      const key = el.dataset.cfg;
+      el.textContent = derived[key] ?? get(CONFIG, key) ?? "";
+    });
+    document.querySelectorAll("[data-cfg-href]").forEach(el => { el.href = get(CONFIG, el.dataset.cfgHref); });
+
+    document.getElementById("timeline").innerHTML = CONFIG.schedule.map(s =>
+            `<li><time>${esc(s.time)}</time><div><strong>${esc(s.title)}</strong><span>${esc(s.note)}</span></div></li>`
+    ).join("");
+  }
+
+  /* Αντίστροφη μέτρηση */
+  function tick() {
+    const diff = Math.max(0, new Date(CONFIG.date) - new Date());
+    const d = Math.floor(diff / 864e5), h = Math.floor(diff / 36e5) % 24,
+            m = Math.floor(diff / 6e4) % 60, s = Math.floor(diff / 1e3) % 60;
+    document.getElementById("cd-d").textContent = d;
+    document.getElementById("cd-h").textContent = String(h).padStart(2, "0");
+    document.getElementById("cd-m").textContent = String(m).padStart(2, "0");
+    document.getElementById("cd-s").textContent = String(s).padStart(2, "0");
+  }
+  setInterval(tick, 1000);
+
+  /* RSVP */
+  const form = document.getElementById("rsvp-form");
+  const msg = document.getElementById("form-msg");
+  const attendingOnly = form.querySelector(".attending-only");
+
+  form.addEventListener("change", e => {
+    if (e.target.name === "attending") attendingOnly.hidden = e.target.value !== "yes";
+  });
+
+  form.addEventListener("submit", async e => {
+    e.preventDefault();
+    const data = Object.fromEntries(new FormData(form));
+    if (data.website) return; // bot
+    if (!data.name?.trim() || !data.attending) {
+      msg.className = "form-msg err"; msg.textContent = MSG.required; return;
+    }
+    if (data.attending !== "yes") data.guests = "0";
+    delete data.website;
+
+    const btn = form.querySelector("button[type=submit]");
+    btn.disabled = true; msg.className = "form-msg"; msg.textContent = MSG.sending;
+
+    try {
+      if (CONFIG.rsvpEndpoint) {
+        await fetch(CONFIG.rsvpEndpoint, { method: "POST", mode: "no-cors", body: new URLSearchParams(data) });
+      } else {
+        console.log("RSVP (δοκιμαστικά):", data);
+      }
+      msg.className = "form-msg ok";
+      msg.textContent = (data.attending === "yes" ? MSG.okYes : MSG.okNo) + (CONFIG.rsvpEndpoint ? "" : MSG.demo);
+      form.reset(); attendingOnly.hidden = true;
+    } catch (err) {
+      msg.className = "form-msg err"; msg.textContent = MSG.error;
+    } finally {
+      btn.disabled = false;
+    }
+  });
+
+  render();
+  tick();
+</script>
+</body>
+</html>
